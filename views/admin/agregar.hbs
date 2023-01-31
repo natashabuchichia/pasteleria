@@ -1,0 +1,25 @@
+<div class="contenedor" style="margin:50px auto">
+    <div class="row">
+        <h5 class="text-center">Insertar una nueva novedad</h5>
+        <form class="agregar" action="/admin/novedades/agregar" method="post" enctype="multipart/form-data">
+            <div class="mb-3 row">
+                <input type="text" class="form-control" placeholder="Título" name="titulo">
+            </div>
+            <div class="mb-3 row">
+                <input type="text" class="form-control" placeholder="Subtítulo" name="subtitulo">
+            </div>
+            <div class="mb-3 row">
+                <label>Insertar multimedia: 
+                    <input type="file" class="form-control" name="imagen" id="imagen" />
+                </label>
+            </div>
+            <div class="mb-3 row">
+                <textarea type="text" class="form-control" placeholder="Cuerpo" name="cuerpo"></textarea>
+            </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+            {{#if error}}
+                <div class="error">{{message}}</div>
+            {{/if}}
+    </div>
+</div>

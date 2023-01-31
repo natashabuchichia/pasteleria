@@ -1,0 +1,55 @@
+<div class="sesion" style="margin-top: 20px;">
+    <div class="row">
+        <p class="text-end">¡Bienvenido/a {{usuario}}! 
+            <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión
+                <i class="fas fa-sign-out-alt"></i>
+            </a> 
+        </p>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-7">
+        <h2>Listado de Novedades</h2>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-success" href="/admin/novedades/agregar">Nueva novedad <i class="fa fa-plus" aria-hidden="true"></i></a>
+    </div>
+</div> 
+
+
+<form class="novedades">
+<div class="row">
+    <div class="col">
+<table class="table table-striped">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Subtítulo</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Cuerpo</th>
+            <th scope="col">Editar</th>
+        </tr>
+    </thead>
+          <tbody>
+            {{#each novedades}}
+            <tr class="text-center">
+                <th scope="row">{{Id}}</th>
+                <td>{{titulo}}</td>
+                <td>{{subtitulo}}</td>    
+                <td>{{{imagen}}}</td>           
+                <td>{{cuerpo}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="/admin/novedades/modificar/{{Id}}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary" href="/admin/novedades/eliminar/{{Id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+            </tr>
+            {{/each}}
+         </tbody>
+    </table>
+    </div>
+</div>
+</form>
